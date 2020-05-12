@@ -1,0 +1,11 @@
+[package]
+name = "rust_ffi"
+version = "0.1.0"
+authors = ["Kirill Ivanov <saneargue@gmail.com>"]
+
+[lib]
+name = "rust_ffi"
+crate-type = ["staticlib", "cdylib"]
+
+[dependencies]
+libc = "0.2.69"
