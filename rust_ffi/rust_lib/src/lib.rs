@@ -10,3 +10,19 @@ pub extern fn about() -> *const c_char {
     std::mem::forget(char_str);
     ptr
 }
+
+#[repr(C)]
+pub struct Foo {
+    a: i32,
+    b: i32,
+    c: i32,
+}
+
+#[no_mangle]
+pub extern fn increment_foo(foo: Foo, add: i32) -> Foo {
+    Foo{
+        a: foo.a + add,
+        b: foo.b + add,
+        c: foo.c + add
+    }
+}
