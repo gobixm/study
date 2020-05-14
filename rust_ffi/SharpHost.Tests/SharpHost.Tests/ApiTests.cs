@@ -41,5 +41,18 @@ namespace Gobi.SharpHost.Tests
             };
             incremented.Should().BeEquivalentTo(expected);
         }
+        
+        [Fact]
+        public void Map_TransformedValue_Returned()
+        {
+            // arrange
+            var source = 10;
+
+            // act
+            var mapped = Api.Map(source, x => -x);
+
+            // assert
+            mapped.Should().Be(-10);
+        }
     }
 }

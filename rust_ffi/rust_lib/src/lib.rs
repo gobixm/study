@@ -26,3 +26,10 @@ pub extern fn increment_foo(foo: Foo, add: i32) -> Foo {
         c: foo.c + add
     }
 }
+
+type Map = fn(i32) -> i32;
+
+#[no_mangle]
+pub extern fn map(v: i32, map: Map) -> i32 {
+    map(v)
+}
