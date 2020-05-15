@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using FluentAssertions;
 using Gobi.SharpHost.Models;
 using Xunit;
@@ -53,6 +54,26 @@ namespace Gobi.SharpHost.Tests
 
             // assert
             mapped.Should().Be(-10);
+        }
+        
+        [Fact]
+        public void AllocateFoo_Foo_Returned()
+        {
+            // arrange
+            var expectedFoo = new Foo
+            {
+                A = 1,
+                B = 2,
+                C = 3
+            };
+            
+            // act
+            var fooPtr = Api.AllocateFoo();
+
+            // assert
+            var foo = Marshal.PtrToStructure<Foo>(fooPtr);
+            foo.Should().BeEquivalentTo(expectedFoo);
+            Api.ReleaseFoo(fooPtr);
         }
     }
 }

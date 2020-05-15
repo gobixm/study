@@ -33,3 +33,20 @@ type Map = fn(i32) -> i32;
 pub extern fn map(v: i32, map: Map) -> i32 {
     map(v)
 }
+
+#[no_mangle]
+pub extern fn allocate_foo() -> *mut Foo {
+        let foo = Box::new(Foo{
+            a: 1,
+            b: 2,
+            c: 3
+        });
+        Box::into_raw(foo)
+}
+
+#[no_mangle]
+pub extern fn release_foo(ptr: *mut Foo) {
+    unsafe {
+        Box::from_raw(ptr);
+    }
+}

@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using Gobi.SharpHost.Models;
 
 namespace Gobi.SharpHost
@@ -27,5 +28,17 @@ namespace Gobi.SharpHost
             CharSet = CharSet.Unicode,
             CallingConvention = CallingConvention.Cdecl)]
         public static extern int Map(int value, MapDelegate map);
+        
+        [DllImport(LibPath,
+            EntryPoint = "allocate_foo",
+            CharSet = CharSet.Unicode,
+            CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr AllocateFoo();
+        
+        [DllImport(LibPath,
+            EntryPoint = "release_foo",
+            CharSet = CharSet.Unicode,
+            CallingConvention = CallingConvention.Cdecl)]
+        public static extern void ReleaseFoo(IntPtr foo);
     }
 }
