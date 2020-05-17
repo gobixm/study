@@ -20,10 +20,19 @@ pub struct Foo {
 
 #[no_mangle]
 pub extern fn increment_foo(foo: Foo, add: i32) -> Foo {
-    Foo{
+    Foo {
         a: foo.a + add,
         b: foo.b + add,
-        c: foo.c + add
+        c: foo.c + add,
+    }
+}
+
+#[no_mangle]
+pub extern fn fill_foo(foo: *mut Foo, value: i32) {
+    unsafe {
+        (*foo).a = value;
+        (*foo).b = value;
+        (*foo).c = value;
     }
 }
 
@@ -36,12 +45,12 @@ pub extern fn map(v: i32, map: Map) -> i32 {
 
 #[no_mangle]
 pub extern fn allocate_foo() -> *mut Foo {
-        let foo = Box::new(Foo{
-            a: 1,
-            b: 2,
-            c: 3
-        });
-        Box::into_raw(foo)
+    let foo = Box::new(Foo {
+        a: 1,
+        b: 2,
+        c: 3,
+    });
+    Box::into_raw(foo)
 }
 
 #[no_mangle]

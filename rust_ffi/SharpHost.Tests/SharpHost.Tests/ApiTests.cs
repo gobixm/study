@@ -75,5 +75,24 @@ namespace Gobi.SharpHost.Tests
             foo.Should().BeEquivalentTo(expectedFoo);
             Api.ReleaseFoo(fooPtr);
         }
+        
+        [Fact]
+        public void FillFoo_Foo_Modified()
+        {
+            // arrange
+            var foo = new Foo();
+            var expectedFoo = new Foo
+            {
+                A = 11,
+                B = 11,
+                C = 11,
+            };
+            
+            // act
+            Api.FillFoo(ref foo, 11);
+
+            // assert
+            foo.Should().BeEquivalentTo(expectedFoo);
+        }
     }
 }

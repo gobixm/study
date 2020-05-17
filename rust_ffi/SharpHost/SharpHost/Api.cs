@@ -40,5 +40,11 @@ namespace Gobi.SharpHost
             CharSet = CharSet.Unicode,
             CallingConvention = CallingConvention.Cdecl)]
         public static extern void ReleaseFoo(IntPtr foo);
+        
+        [DllImport(LibPath,
+            EntryPoint = "fill_foo",
+            CharSet = CharSet.Unicode,
+            CallingConvention = CallingConvention.Cdecl)]
+        public static extern void FillFoo(ref Foo foo, int value);
     }
 }
