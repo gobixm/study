@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpHost", "SharpHost\SharpHost.csproj", "{B6A63D92-C1B6-497A-AE4D-46D0E08EB016}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gobi.SharpHost", "Gobi.SharpHost\Gobi.SharpHost.csproj", "{B6A63D92-C1B6-497A-AE4D-46D0E08EB016}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpHost.Tests", "..\SharpHost.Tests\SharpHost.Tests\SharpHost.Tests.csproj", "{30E8CAEE-E811-4A4F-9391-D9354966EF94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gobi.SharpHost.Tests", "Gobi.SharpHost.Tests\Gobi.SharpHost.Tests.csproj", "{761A6D41-E5AA-4F7E-9A3D-0BA7F720C1D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{B6A63D92-C1B6-497A-AE4D-46D0E08EB016}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6A63D92-C1B6-497A-AE4D-46D0E08EB016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6A63D92-C1B6-497A-AE4D-46D0E08EB016}.Release|Any CPU.Build.0 = Release|Any CPU
-		{30E8CAEE-E811-4A4F-9391-D9354966EF94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{30E8CAEE-E811-4A4F-9391-D9354966EF94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{30E8CAEE-E811-4A4F-9391-D9354966EF94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{30E8CAEE-E811-4A4F-9391-D9354966EF94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{761A6D41-E5AA-4F7E-9A3D-0BA7F720C1D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{761A6D41-E5AA-4F7E-9A3D-0BA7F720C1D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{761A6D41-E5AA-4F7E-9A3D-0BA7F720C1D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{761A6D41-E5AA-4F7E-9A3D-0BA7F720C1D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

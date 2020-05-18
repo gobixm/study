@@ -1,4 +1,7 @@
+#![feature(test)]
+
 extern crate libc;
+extern crate test;
 
 use std::ffi::CString;
 use std::os::raw::c_char;
@@ -57,5 +60,26 @@ pub extern fn allocate_foo() -> *mut Foo {
 pub extern fn release_foo(ptr: *mut Foo) {
     unsafe {
         Box::from_raw(ptr);
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use test::Bencher;
+
+    #[bench]
+    fn bench_fill_foo(b: &mut Bencher) {
+        let mut foo = Foo{
+            a: 0,
+            b: 0,
+            c: 0
+        };
+
+        b.iter(|| {
+            for i in 0..10000 {
+                fill_foo(&mut foo, i)
+            }
+        });
     }
 }

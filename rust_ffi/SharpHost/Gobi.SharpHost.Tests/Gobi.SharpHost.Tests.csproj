@@ -19,7 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\SharpHost\SharpHost\SharpHost.csproj" />
+      <ProjectReference Include="..\..\SharpHost\Gobi.SharpHost\Gobi.SharpHost.csproj" />
     </ItemGroup>
 
 </Project>

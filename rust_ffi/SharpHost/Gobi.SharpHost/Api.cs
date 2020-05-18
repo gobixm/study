@@ -8,7 +8,7 @@ namespace Gobi.SharpHost
     {
         public delegate int MapDelegate(int x);
 
-        private const string LibPath = "../../../../../rust_lib/target/release/rust_ffi.dll";
+        private const string LibPath = "rust_ffi.dll";
 
         [DllImport(LibPath,
             EntryPoint = "about",
